@@ -79,11 +79,11 @@ var customers = [
 ];
 // Find all customers whose firstname starts with 'J'
 var nameStartsWith;
-for (let key in customers) {
-nameStartsWith = (customers[key].firstname.charAt(0));
-if(nameStartsWith == "J") {
-console.log(customers[key]);
-}
+  for (let key in customers) {
+  nameStartsWith = (customers[key].firstname.charAt(0));
+  if(nameStartsWith == "J") {
+  console.log(customers[key]);
+  }
 }
 
 // Create new array with firstname and lastname
