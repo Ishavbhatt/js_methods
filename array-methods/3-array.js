@@ -14,7 +14,14 @@ var words = [
 
 // Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array. 
 // (indexOf)
+function uniquifyArray(arr) {
+  return arr.filter(function(word,i,arr2){
+    return arr2.indexOf(word) === i;
+  });
+}
 
+uniquifyArray(words)
+  
 
 
 var words2 = [
@@ -29,6 +36,10 @@ var words2 = [
 ];
 
 // Write a function doesWordExist that will take in an array of words as one argument, and a word to search for as the other. Return true if it exists, otherwise, return false. Don't use indexOf for this one.
+function doesWordExist(array,word) {
+  return array.includes(word);
+}
+
 
 
 
@@ -47,9 +58,21 @@ var words3 = [
   'matter'
 ];
 
-
 // Write a function howManyTimes that will take in an array of words as one argument, and a word to search for as the other. The function will return the number of times that word appears in the array.
+function howManyTimes(array,word) 
+{
+  var check = 0
+  for (i=0; i<array.length; i++)
+  {
+    if(array[i] == word)
+      {
+        check += +1;
+      }
+  }
+      return check
+}
 
+howManyTimes(words3,'matter')
 
 
 
@@ -73,6 +96,14 @@ let data = [
     pop: 263991379,
   }
 ]
+var sum = data.reduce((accumulator, currentvalue) => {
+ if ( currentvalue.country == 'China') {
+         return accumulator
+  } else {
+       return  accumulator + currentvalue.pop
+  }
+}, 0);
+console.log(sum)
 
 
 // Use reduce method and summorize the collection like
@@ -91,6 +122,12 @@ const fruitBasket = [
   'fig'
 ];
 
+const count = fruitBasket.reduce( (tally, fruit) => {
+  tally[fruit] = (tally[fruit] || 0) + 1 ;
+  return tally;
+} , {})
+
+count
 
 
 // Bonus Question (Solve only if you have time)
