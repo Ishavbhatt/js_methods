@@ -17,6 +17,14 @@ var pizzas = [
   "Margherita"
 ];
 
+var output = pizzas.map(function (value) {
+  return value.length;
+});
+console.log(output);
+
+
+
+
 var cuts = [
   "Chuck",
   "Brisket",
@@ -30,4 +38,14 @@ var cuts = [
   "Round"
 ];
 
+cuts.forEach(function(value,index) {
+  console.log(value,index);
+})
+
+
 var numbers = [1, 2, 3, 4, 5, 6, 23, 121, 345, 33, 23, 12, 435, 642, 66, 23];
+
+var output =numbers.filter(function(value) {
+  return value>100;
+})
+console.log(output);
