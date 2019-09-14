@@ -12,35 +12,45 @@
       // Go through todo.md before start solving.
       function countAllPeople() {
         // your code goes here
-        console.log(got);
+        return got.houses.reduce( (acc, cv) => {
+          return acc + cv.people.length;
+        }, 0);
       }
 
       function peopleByHouses() {
-        // your code goes here
+        return got.houses.reduce( (acc, cv) => {
+          acc[cv.name] = cv.people.length;
+          return acc;
+        }, {});
       }
 
       function everyone() {
-        // your code goes here
+        return got.houses.reduce( (acc, cv) => {
+          return acc = [...acc, ...cv.people.map( (elm) => elm.name)];
+        }, []);
       }
 
       function nameWithS() {
-        // your code goes here
+        return everyone().filter( (elm) => /s/i.test(elm));
       }
 
       function nameWithA() {
-        // your code goes here
+        return everyone().filter( (elm) => /a/i.test(elm));
       }
 
       function surnameWithS() {
-        // your code goes here
+        return everyone().filter( (elm) => /\s[s]/i.test(elm));
       }
 
       function surnameWithA() {
-        // your code goes here
+        return everyone().filter( (elm) => /\s[a]/i.test(elm));
       }
 
       function peopleNameOfAllHouses() {
-        // your code goes here
+        return got.houses.reduce( (acc, cv) => {
+          acc[cv.name] = cv.people.map( (elm) => elm.name);
+          return acc;
+        }, {});
       }
 
       // Testing your result after writing your function
