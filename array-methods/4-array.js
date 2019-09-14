@@ -32,7 +32,7 @@ var data = [
 // your code goes here
 function sumofAges() {
   var sum = 0;
-for (let i=0; i<data.length; i++) {
+for (let i = 0; i < data.length; i ++) {
 sum = sum + data[i].age*7;
 }
 return(sum);
@@ -42,7 +42,19 @@ return(sum);
 
 // Write the same function using
 // 1. filter - for filtering the cat or dog
+const ages = data.filter((animal) => {
+  return animal.type === 'dog';
+})
+
 // 2. map - to multiply human year to dog year
+.map((animal) => {
+  return animal.age *= 7
+})
+
 // 3. reduce - to accumulate total age.
+.reduce((total, animal) => {
+  return total + animal.age;
+})
 
 // Solution 105
+
